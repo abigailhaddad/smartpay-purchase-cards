@@ -46,6 +46,7 @@ for ax, col, label in zip(axes, ["Spend", "Transactions", "Cards", "avg_purchase
                           ["Spend ($)", "Transactions", "Cards", "Average purchase ($)"]):
     ax.plot(recent.index, recent[col], lw=2, color="#2a6f97")
     ax.yaxis.set_major_formatter(fmt[col])
+    ax.set_ylim(bottom=0)
     ax.set_title(label, loc="left", fontsize=11)
     ax.axvline(pd.Timestamp("2025-02-26"), color="#999", lw=1, ls="--")
     ax.spines[["top", "right"]].set_visible(False)
